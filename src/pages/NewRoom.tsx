@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import {} from "react-router-dom"
 
 import { Button } from "../components/Button"
 import { database, ref, push } from "../services/firebase"
@@ -12,6 +13,7 @@ import "../styles/auth.scss"
 
 export function NewRoom() {
   const { user } = useAuth()
+  const navigate = useNavigate()
   const [newRoom, setNewRoom] = useState("")
 
   function handleCreateRoom(event: FormEvent) {
@@ -23,7 +25,7 @@ export function NewRoom() {
     push(roomRef, {
       title: newRoom,
       authorId: user?.id,
-    })
+    }).then((value) => navigate(`/rooms/${value.key}`))
   }
 
   return (
@@ -45,7 +47,7 @@ export function NewRoom() {
               type="text"
               placeholder="Nome da sala"
               onChange={(event) => setNewRoom(event.target.value)}
-              value={newRoom}
+              defaultValue={newRoom}
             />
             <Button type="submit">Criar sala</Button>
           </form>
