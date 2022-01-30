@@ -50,7 +50,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     return () => {
       unsubscribe()
     }
-  })
+  }, [])
 
   /**
    * Method to authenticate the user using Google's auth provider (Firebase)
