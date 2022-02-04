@@ -37,9 +37,4 @@
   &:not(:disabled):hover {
     filter: brightness(0.9);
   }
-
-  &:disabled {
-    opacity: .6;
-    cursor: not-allowed;
-  }
 }

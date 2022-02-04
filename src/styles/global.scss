@@ -12,3 +12,11 @@ body {
 body, input, label, textarea {
   font: 400 16px 'Roboto', sans-serif;
 }
+
+button,
+a {
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+}

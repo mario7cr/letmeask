@@ -8,6 +8,7 @@ import {
   child,
   onValue,
   remove,
+  update
 } from "firebase/database"
 
 const firebaseConfig = {
@@ -36,4 +37,5 @@ export {
   child,
   onValue,
   remove,
+  update
 }

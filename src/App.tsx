@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { AuthContextProvider } from "./contexts/AuthContextProvider"
+import { Toaster } from "react-hot-toast"
 import Modal from "react-modal"
 
 import { Home } from "./pages/Home"
@@ -24,6 +25,7 @@ function App() {
           <Route path="/admin/rooms/:id" element={<AdminRoom />}></Route>
         </Routes>
       </AuthContextProvider>
+      <Toaster />
     </BrowserRouter>
   )
 }
